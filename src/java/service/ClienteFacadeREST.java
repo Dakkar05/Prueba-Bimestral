@@ -99,7 +99,15 @@ public class ClienteFacadeREST extends AbstractFacade<Cliente> {
     public String editar(@FormParam("idcliente")int idcliente,@FormParam("nombre")String nombre,@FormParam("apellido")String apellido,@FormParam("cedula")String cedula,@FormParam("dereccion")String direccion,@FormParam("edad")String edad,@FormParam("provincia")String provincia,@FormParam("vehiculo")String vehiculo){
     Cliente ob = super.find(idcliente);
     
-    
+    ob.setApellido(apellido);
+    ob.setCedula(cedula);
+    ob.setDireccion(direccion);
+    ob.setEdad(edad);
+    ob.setIdcliente(idcliente);
+    ob.setNombre(nombre);
+    ob.setProviciaproced(provincia);
+    ob.setVehiculo(vehiculo);
+    return "se registro con exito";
     
     }
     

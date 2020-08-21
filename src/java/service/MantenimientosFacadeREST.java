@@ -92,6 +92,20 @@ public class MantenimientosFacadeREST extends AbstractFacade<Mantenimientos> {
     super.create(ob);
     return "El cliente se registro con Exito";
     }
+    
+    @POST
+    @Path("editarmant")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON})
+    public String editar(@FormParam("idmantenimiento")int idmantenimiento,@FormParam("vehiculo")String vehiculo,@FormParam("idcliente")int idcliente,@FormParam("fecha")String fecha,@FormParam("descripcion")String descripcion,@FormParam("kilometraje")String kilometraje){
+    Mantenimientos ob = super.find(idmantenimiento);
+    ob.setDescripcion(descripcion);
+    ob.setFecha(fecha);
+    ob.setIdcliente(idcliente);
+    ob.setIdmantenimientos(idmantenimiento);
+    ob.setKilometraje(kilometraje);
+    ob.setVehiculo(vehiculo);
+    return "actualizado";
+    }
 
     @Override
     protected EntityManager getEntityManager() {
