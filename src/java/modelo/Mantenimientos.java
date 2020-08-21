@@ -55,6 +55,18 @@ public class Mantenimientos implements Serializable {
     @Column(name = "kilometraje")
     private String kilometraje;
 
+    public Mantenimientos(Integer idmantenimientos, String vehiculo, Integer idcliente, String fecha, String descripcion, String kilometraje) {
+        this.idmantenimientos = idmantenimientos;
+        this.vehiculo = vehiculo;
+        this.idcliente = idcliente;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+        this.kilometraje = kilometraje;
+    }
+
+    
+    
+    
     public Mantenimientos() {
     }
 

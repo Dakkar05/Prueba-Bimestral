@@ -68,6 +68,20 @@ public class Vehiculos implements Serializable {
     @Column(name = "consecionario")
     private String consecionario;
 
+    public Vehiculos(Integer idvehiculos, String año, String capacidad, String modelo, String marca, String cilindraje, String paisfabri, String placa, String consecionario) {
+        this.idvehiculos = idvehiculos;
+        this.año = año;
+        this.capacidad = capacidad;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.cilindraje = cilindraje;
+        this.paisfabri = paisfabri;
+        this.placa = placa;
+        this.consecionario = consecionario;
+    }
+
+    
+    
     public Vehiculos() {
     }
 

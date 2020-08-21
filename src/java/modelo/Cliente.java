@@ -64,6 +64,20 @@ public class Cliente implements Serializable {
     @Column(name = "vehiculo")
     private String vehiculo;
 
+    public Cliente(Integer idcliente, String nombre, String apellido, String cedula, String direccion, String edad, String proviciaproced, String vehiculo) {
+        this.idcliente = idcliente;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
+        this.direccion = direccion;
+        this.edad = edad;
+        this.proviciaproced = proviciaproced;
+        this.vehiculo = vehiculo;
+    }
+
+    
+    
+    
     public Cliente() {
     }
 
