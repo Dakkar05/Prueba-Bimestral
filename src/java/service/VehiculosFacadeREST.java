@@ -92,6 +92,28 @@ public class VehiculosFacadeREST extends AbstractFacade<Vehiculos> {
     super.create(ob);
     return "El cliente se registro con Exito";
     }
+    
+    @POST
+    @Path("editarvehi")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON})
+    public String editar(@FormParam("idvehiculos")int idvehiculos,@FormParam("año")String a\u00f1o,@FormParam("capacidad")String capacidad,@FormParam("modelo")String modelo,@FormParam("marca")String marca,@FormParam("cilindraje")String cilindraje,@FormParam("paisfabri")String paisfabri,@FormParam("placa")String placa,@FormParam("consercionario")String consecionario){
+    Vehiculos ob = super.find(idvehiculos);
+    ob.setAño(año);
+    ob.setCapacidad(capacidad);
+    ob.setCilindraje(cilindraje);
+    ob.setConsecionario(consecionario);
+    ob.setIdvehiculos(idvehiculos);
+    ob.setMarca(marca);
+    ob.setModelo(modelo);
+    ob.setPaisfabri(paisfabri);
+    ob.setPlaca(placa);
+    if(ob== null){
+            return "no se encuentra el id";
+        }else{
+             super.edit(ob);
+            return "Se edito correctamente";
+        }
+    }
 
     @Override
     protected EntityManager getEntityManager() {

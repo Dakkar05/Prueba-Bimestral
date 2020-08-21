@@ -104,7 +104,12 @@ public class MantenimientosFacadeREST extends AbstractFacade<Mantenimientos> {
     ob.setIdmantenimientos(idmantenimiento);
     ob.setKilometraje(kilometraje);
     ob.setVehiculo(vehiculo);
-    return "actualizado";
+    if(ob== null){
+            return "no se encuentra el id";
+        }else{
+             super.edit(ob);
+            return "Se edito correctamente";
+        }
     }
 
     @Override

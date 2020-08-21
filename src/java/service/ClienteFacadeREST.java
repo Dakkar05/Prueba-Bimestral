@@ -107,7 +107,12 @@ public class ClienteFacadeREST extends AbstractFacade<Cliente> {
     ob.setNombre(nombre);
     ob.setProviciaproced(provincia);
     ob.setVehiculo(vehiculo);
-    return "se registro con exito";
+    if(ob== null){
+            return "no se encuentra el id";
+        }else{
+             super.edit(ob);
+            return "Se edito correctamente";
+        }
     
     }
     
