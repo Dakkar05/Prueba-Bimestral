@@ -4,6 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
     <h:body>
         Hello from Facelets
@@ -13,6 +14,15 @@
         <h:link outcome="Cuenca" value="Lojacar Cuenca" /><br></br>
         <h:link outcome="Loja" value="Lojacar Loja" /><br></br>
         <h:link outcome="Machala" value="Lojacar Machala" />
+        <br />
+        <h:link outcome="/cliente/List" value="Show All Cliente Items"/>
+        <br />
+        <h:link outcome="/mantenimientos/List" value="Show All Mantenimientos Items"/>
+        <br />
+        <h:link outcome="/vehiculos/List" value="Show All Vehiculos Items"/>
     </h:body>
+
+
+
 </html>
 

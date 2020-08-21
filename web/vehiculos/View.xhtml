@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VehiculosViewDlg" widgetVar="VehiculosViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewVehiculosTitle}">
+            <h:form id="VehiculosViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{vehiculosController.selected != null}">
+                        <h:outputText value="#{bundle.ViewVehiculosLabel_idvehiculos}"/>
+                        <h:outputText value="#{vehiculosController.selected.idvehiculos}" title="#{bundle.ViewVehiculosTitle_idvehiculos}"/>
+                        <h:outputText value="#{bundle.ViewVehiculosLabel_año}"/>
+                        <h:outputText value="#{vehiculosController.selected.año}" title="#{bundle.ViewVehiculosTitle_año}"/>
+                        <h:outputText value="#{bundle.ViewVehiculosLabel_capacidad}"/>
+                        <h:outputText value="#{vehiculosController.selected.capacidad}" title="#{bundle.ViewVehiculosTitle_capacidad}"/>
+                        <h:outputText value="#{bundle.ViewVehiculosLabel_modelo}"/>
+                        <h:outputText value="#{vehiculosController.selected.modelo}" title="#{bundle.ViewVehiculosTitle_modelo}"/>
+                        <h:outputText value="#{bundle.ViewVehiculosLabel_marca}"/>
+                        <h:outputText value="#{vehiculosController.selected.marca}" title="#{bundle.ViewVehiculosTitle_marca}"/>
+                        <h:outputText value="#{bundle.ViewVehiculosLabel_cilindraje}"/>
+                        <h:outputText value="#{vehiculosController.selected.cilindraje}" title="#{bundle.ViewVehiculosTitle_cilindraje}"/>
+                        <h:outputText value="#{bundle.ViewVehiculosLabel_paisfabri}"/>
+                        <h:outputText value="#{vehiculosController.selected.paisfabri}" title="#{bundle.ViewVehiculosTitle_paisfabri}"/>
+                        <h:outputText value="#{bundle.ViewVehiculosLabel_placa}"/>
+                        <h:outputText value="#{vehiculosController.selected.placa}" title="#{bundle.ViewVehiculosTitle_placa}"/>
+                        <h:outputText value="#{bundle.ViewVehiculosLabel_consecionario}"/>
+                        <h:outputText value="#{vehiculosController.selected.consecionario}" title="#{bundle.ViewVehiculosTitle_consecionario}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="VehiculosViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

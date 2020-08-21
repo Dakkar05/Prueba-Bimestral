@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MantenimientosEditDlg" widgetVar="MantenimientosEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditMantenimientosTitle}">
+            <h:form id="MantenimientosEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mantenimientosController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditMantenimientosLabel_idmantenimientos}" for="idmantenimientos" />
+                        <p:inputText id="idmantenimientos" value="#{mantenimientosController.selected.idmantenimientos}" title="#{bundle.EditMantenimientosTitle_idmantenimientos}" required="true" requiredMessage="#{bundle.EditMantenimientosRequiredMessage_idmantenimientos}"/>
+                        <p:outputLabel value="#{bundle.EditMantenimientosLabel_vehiculo}" for="vehiculo" />
+                        <p:inputText id="vehiculo" value="#{mantenimientosController.selected.vehiculo}" title="#{bundle.EditMantenimientosTitle_vehiculo}" />
+                        <p:outputLabel value="#{bundle.EditMantenimientosLabel_idcliente}" for="idcliente" />
+                        <p:inputText id="idcliente" value="#{mantenimientosController.selected.idcliente}" title="#{bundle.EditMantenimientosTitle_idcliente}" />
+                        <p:outputLabel value="#{bundle.EditMantenimientosLabel_fecha}" for="fecha" />
+                        <p:inputText id="fecha" value="#{mantenimientosController.selected.fecha}" title="#{bundle.EditMantenimientosTitle_fecha}" />
+                        <p:outputLabel value="#{bundle.EditMantenimientosLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{mantenimientosController.selected.descripcion}" title="#{bundle.EditMantenimientosTitle_descripcion}" />
+                        <p:outputLabel value="#{bundle.EditMantenimientosLabel_kilometraje}" for="kilometraje" />
+                        <p:inputText id="kilometraje" value="#{mantenimientosController.selected.kilometraje}" title="#{bundle.EditMantenimientosTitle_kilometraje}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{mantenimientosController.update}" value="#{bundle.Save}" update="display,:MantenimientosListForm:datalist,:growl" oncomplete="handleSubmit(args, 'MantenimientosEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="MantenimientosEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
